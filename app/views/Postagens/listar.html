@@ -1,4 +1,17 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Listagem' /}
 
-#{welcome /}
+
+<h1>Listagem</h1>
+
+ #{list items:lista, as:'p'}
+    <p>${p.titulo} | ${p.conteudo} | ${p.autor} | ${p.data} 
+    <a href="@{Postagens.remover(p.id)}">REMOVER</a>
+    </p>
+ #{/list}
+ #{else}
+  <p> Nenhuma pessoa cadastrada.</br></p>
+#{/else}
+
+
+<button type="submit" class="btn btn-primary"><a href="@{Postagens.form}">Nova Postagem</a></button>

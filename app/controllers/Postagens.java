@@ -17,8 +17,13 @@ public class Postagens extends Controller {
         render(lista);
     }
     public static void salvar(Postagem p) {
-	   
-	   
 	   p.save();
+	   listar();
+   }
+   public static void remover(long id) {
+	  Postagem rp = Postagem.findById(id);
+	  rp.delete();
+	  
+	  listar();
    }
 }
