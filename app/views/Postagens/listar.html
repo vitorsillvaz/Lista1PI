@@ -5,7 +5,7 @@
 <h1>Listagem</h1>
 
  #{list items:lista, as:'p'}
-    <p>${p.titulo} | ${p.conteudo} | ${p.autor} | ${p.data} 
+    <p>${p.titulo} | ${p.conteudo} | ${p.autor} | ${p.data.format('dd/MM/yyyy')} 
     <a href="@{Postagens.remover(p.id)}">REMOVER</a>
     </p>
  #{/list}
